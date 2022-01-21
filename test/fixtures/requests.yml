@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  requesting: MyString
+  who: MyString
+  whom: MyString
+  deadline: 2022-01-22
+  user_id: 1
+
+two:
+  requesting: MyString
+  who: MyString
+  whom: MyString
+  deadline: 2022-01-22
+  user_id: 1
