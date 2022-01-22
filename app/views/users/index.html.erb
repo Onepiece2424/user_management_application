@@ -3,3 +3,16 @@
 <p><%= link_to "ログイン", user_session_path %></p>
 <p><%= link_to "新規登録", new_user_registration_path %></p>
 <p><%= link_to "ログアウト",  destroy_user_session_path, method: :delete  %></p>
+
+<table>
+<tr>
+  <th>ユーザー名</th>
+  <th>ユーザー詳細ページ</th>
+</tr>
+<% @users.each do |user| %>
+<tr>
+  <td><%= user.username %></td>
+  <td><%= link_to user.email, user_requests_path(user) %></td>
+</tr>
+<% end %>
+</table>
