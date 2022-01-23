@@ -13,10 +13,11 @@ class ExplainsController < ApplicationController
 
   def create
     @explain = Explain.new(explain_params)
+    @user = User.find(params[:user_id])
 
     respond_to do |format|
       if @explain.save
-        format.html { redirect_to user_explain_url(@user, @explain), notice: "Explain was successfully created." }
+        format.html { redirect_to user_explains_path(@user, @explain), notice: "Explain was successfully created." }
         format.json { render :show, status: :created, location: @explain }
       else
         format.html { render :new, status: :unprocessable_entity }
