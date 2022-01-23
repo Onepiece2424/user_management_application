@@ -21,3 +21,11 @@
 	transform: translate(-50%, -50%);
 	text-align: center;
  }
+
+ .box{
+  float: left;
+}
+
+.boxContainer{
+	float: right;
+}
