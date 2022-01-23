@@ -1,0 +1,52 @@
+<%= form_with(model:[@user,@explain]) do |form| %>
+  <% if explain.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(explain.errors.count, "error") %> prohibited this explain from being saved:</h2>
+
+      <ul>
+        <% explain.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :precedure1 %>
+    <%= form.text_area :precedure1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image1 %>
+    <%= form.text_field :image1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :precedure2 %>
+    <%= form.text_area :precedure2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image2 %>
+    <%= form.text_field :image2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :precedure3 %>
+    <%= form.text_area :precedure3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image3 %>
+    <%= form.text_field :image3 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

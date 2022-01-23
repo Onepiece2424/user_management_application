@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users do
     resources :requests
+    resources :explains
   end
 end
