@@ -1,6 +1,7 @@
 class RequestsController < ApplicationController
   before_action :authenticate_user!
   def index
+    # @user = User.find(params[:user_id])
     @requests = Request.all
   end
 
@@ -29,8 +30,7 @@ class RequestsController < ApplicationController
   def destroy
     @request = Request.find(params[:id])
     @request.destroy
-
-    redirect_to user_request_path
+    redirect_to user_requests_path
   end
 
   private
