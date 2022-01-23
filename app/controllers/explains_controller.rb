@@ -6,16 +6,9 @@ class ExplainsController < ApplicationController
     @explains = @user.explains.all
   end
 
-  def show
-
-  end
-
   def new
     @explain = Explain.new
     @user = User.find(params[:user_id])
-  end
-
-  def edit
   end
 
   def create
@@ -23,13 +16,19 @@ class ExplainsController < ApplicationController
 
     respond_to do |format|
       if @explain.save
-        format.html { redirect_to explain_url(@explain), notice: "Explain was successfully created." }
+        format.html { redirect_to user_explain_url(@user, @explain), notice: "Explain was successfully created." }
         format.json { render :show, status: :created, location: @explain }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @explain.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def show
+  end
+
+  def edit
   end
 
   def update
