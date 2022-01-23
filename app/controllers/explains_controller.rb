@@ -27,15 +27,21 @@ class ExplainsController < ApplicationController
   end
 
   def show
+    @user = User.where(:id => params[:user_id]).first
+    @explain = Explain.find(params[:id])
   end
 
   def edit
+    @user = User.where(:id => params[:user_id]).first
+    @explain = Explain.find(params[:id])
   end
 
   def update
+    @explain = Explain.new(explain_params)
+    @user = User.find(params[:user_id])
     respond_to do |format|
       if @explain.update(explain_params)
-        format.html { redirect_to explain_url(@explain), notice: "Explain was successfully updated." }
+        format.html { redirect_to user_explain_path(@user, @explain), notice: "Explain was successfully updated." }
         format.json { render :show, status: :ok, location: @explain }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -48,7 +54,7 @@ class ExplainsController < ApplicationController
     @explain.destroy
 
     respond_to do |format|
-      format.html { redirect_to explains_url, notice: "Explain was successfully destroyed." }
+      format.html { redirect_to user_explains_url, notice: "Explain was successfully destroyed." }
       format.json { head :no_content }
     end
   end
