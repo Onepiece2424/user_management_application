@@ -3,7 +3,7 @@ class ExplainsController < ApplicationController
 
   def index
     @user = User.where(:id => params[:user_id]).first
-    @explains = @user.explains.all
+    @explains = Explain.all
   end
 
   def new
