@@ -7,8 +7,8 @@ class ExplainsController < ApplicationController
   end
 
   def new
-    @explain = Explain.new
     @user = User.find(params[:user_id])
+    @explain = Explain.new
   end
 
   def create
