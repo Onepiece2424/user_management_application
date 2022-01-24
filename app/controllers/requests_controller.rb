@@ -1,17 +1,19 @@
 class RequestsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_request, only: %i[ show edit update destroy ]
   def index
-    # @user = User.find(params[:user_id])
+    @user = User.where(:id => params[:user_id]).first
     @requests = Request.all
   end
 
   def new
-    @request = Request.new
     @user = User.find(params[:user_id])
+    @request = Request.new
   end
 
   def create
     @request = Request.new(request_params)
+    @request.user_id = current_user.id
     if @request.save
       redirect_to user_requests_path
     end
@@ -36,5 +38,10 @@ class RequestsController < ApplicationController
   private
   def request_params
     params.require(:request).permit(:requesting, :who, :whom, :deadline)
+  end
+
+  def set_request
+    @request = Request.find(params[:id])
+    @user = User.find(params[:user_id])
   end
 end
