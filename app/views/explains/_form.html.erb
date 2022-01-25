@@ -46,6 +46,9 @@
     <%= form.text_field :image3 %>
   </div>
 
+  <%= form.label :画像 %><br />
+  <%= form.file_field :img, class: "image" %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
