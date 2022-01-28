@@ -35,5 +35,10 @@
   <%= @explain.image3 %>
 </p>
 
+<p>
+  <strong>Img:</strong>
+  <%= image_tag @explain.img.url %>
+</p>
+
 <%= link_to 'Edit', edit_user_explain_path(@user, @explain) %>
 <%= link_to 'Back', user_explains_path %>

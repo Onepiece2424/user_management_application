@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :image1 %>
-    <%= form.text_field :image1 %>
+    <%= form.text_area :image1 %>
   </div>
 
   <div class="field">
@@ -46,9 +46,11 @@
     <%= form.text_field :image3 %>
   </div>
 
-  <%= form.label :画像 %><br />
-  <%= form.file_field :img, class: "image" %>
-
+  <div>
+    <%= form.label :img %><br />
+    <%= form.file_field :img, class: "image" %>
+  </div>
+<br>
   <div class="actions">
     <%= form.submit %>
   </div>
