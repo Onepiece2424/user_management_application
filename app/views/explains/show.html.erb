@@ -37,7 +37,9 @@
 
 <p>
   <strong>Img:</strong>
-  <%= image_tag @explain.img.url %>
+  <% @explain.img.each do |p| %>
+    <%= image_tag p.url %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_user_explain_path(@user, @explain) %>

@@ -46,10 +46,21 @@
     <%= form.text_field :image3 %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :img %><br />
-    <%= form.file_field :img, class: "image" %>
+    <%= form.file_field :img, class: "image", multiple: true, accept: "image/*" %>
   </div>
+
+  <div class="field">
+    <%= form.label :img %>
+    <%= form.file_field :img, class: "image", multiple: true, accept: "image/*" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :img %>
+    <%= form.file_field :img, class: "image", multiple: true, accept: "image/*" %>
+  </div>
+
 <br>
   <div class="actions">
     <%= form.submit %>

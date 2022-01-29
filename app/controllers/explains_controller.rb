@@ -65,6 +65,6 @@ class ExplainsController < ApplicationController
     end
 
     def explain_params
-      params.require(:explain).permit(:title, :precedure1, :image1, :precedure2, :image2, :precedure3, :image3, :img)
+      params.require(:explain).permit(:title, :precedure1, :image1, :precedure2, :image2, :precedure3, :image3,{img: []})
     end
 end
