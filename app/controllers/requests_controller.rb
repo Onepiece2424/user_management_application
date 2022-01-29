@@ -2,7 +2,7 @@ class RequestsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_request, only: %i[ show edit update destroy ]
   def index
-    @user = User.where(:id => params[:user_id]).first
+    @user = current_user.id
     @requests = Request.all
   end
 
