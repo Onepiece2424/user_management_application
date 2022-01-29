@@ -29,6 +29,13 @@ class RequestsController < ApplicationController
     @user = User.find(params[:user_id])
   end
 
+  def update
+    @user = User.find(params[:user_id])
+    @request = Request.find(params[:id])
+    @request.update(request_params)
+    redirect_to user_requests_path
+  end
+
   def destroy
     @request = Request.find(params[:id])
     @request.destroy
