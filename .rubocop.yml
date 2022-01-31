@@ -15,6 +15,7 @@ AllCops:
     - 'config/**/*'
     - 'script/**/*'
     - !ruby/regexp /old_and_unused\.rb$/
+    - 'app/models/**'
 
 # 日本語でのコメントを許可
 AsciiComments:
