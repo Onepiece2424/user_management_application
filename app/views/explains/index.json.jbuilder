@@ -1,1 +1,1 @@
-json.array! @explains, partial: "explains/explain", as: :explain
+json.array! @explains, :partial => "explains/explain", :as => :explain
