@@ -3,7 +3,7 @@ class RequestsController < ApplicationController
   before_action :set_request, only: %i[ show edit update destroy ]
   def index
     @user = current_user.id
-    @requests = Request.all
+    @requests = Request.where(whom: current_user.username )
   end
 
   def new
