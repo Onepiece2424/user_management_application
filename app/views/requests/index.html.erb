@@ -18,12 +18,14 @@
   <td><%= request.who %></td>
   <td><%= request.whom %></td>
   <td><%= request.deadline %></td>
-  <td></td>
-  <td></td>
-  <td></td>
+  <td><%= link_to '詳細', user_request_path(current_user, request) %></td>
+  <td><%= link_to '編集', edit_user_request_path(current_user, request) %></td>
+  <td><%= link_to '削除', user_request_path(current_user, request), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>
 <% end %>
 </table>
 </div>
+<div><%= link_to "ユーザー一覧", users_path %></div>
 <div><%= link_to "Requestの作成", new_user_request_path %></div>
+<div><%= link_to "Explainの一覧", user_explains_path %></div>
 <div><%= link_to "Explainの作成", new_user_explain_path %></div>

@@ -1,14 +1,14 @@
-<h2>ユーザー一覧</h2>
+<h2>ユーザー一覧『<%=  current_user.username %>』でログイン中。</h2>
 
 <table>
 <tr>
   <th>ユーザー名</th>
-  <th>ユーザー詳細ページ</th>
+  <th>Request一覧ページ</th>
 </tr>
 <% @users.each do |user| %>
 <tr>
   <td><%= user.username %></td>
-  <td><%= link_to user.email, user_requests_path(user) %></td>
+  <td><%= link_to "#{user.username}のRequest一覧ページ", user_requests_path(user.id) %></td>
 </tr>
 <% end %>
 </table>

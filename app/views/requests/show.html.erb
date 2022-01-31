@@ -1,1 +1,24 @@
-<p>Request#show</p>
+<h2>リクエストの詳細</h2>
+<br>
+<div class="table" >
+<table>
+<tr>
+  <th>お願い事</th>
+  <th>誰が</th>
+  <th>誰に</th>
+  <th>いつまでに</th>
+</tr>
+
+<tr>
+  <td><%= @request.requesting %></td>
+  <td><%= @request.who %></td>
+  <td><%= @request.whom %></td>
+  <td><%= @request.deadline %></td>
+</tr>
+</table>
+</div>
+<div><%= link_to "ユーザー一覧", users_path %></div>
+<div><%= link_to "Requestの作成", new_user_request_path %></div>
+<div><%= link_to "Explainの一覧", user_explains_path %></div>
+<div><%= link_to "Explainの作成", new_user_explain_path %></div>
+<div><%= link_to "Request一覧", user_requests_path %></div>

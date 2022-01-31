@@ -1,0 +1,22 @@
+<h2>リクエストの編集</h2>
+<br>
+<div class="table" >
+  <table>
+    <tr>
+      <th>お願い事</th>
+      <th>誰が</th>
+      <th>誰に</th>
+      <th>いつまでに</th>
+    </tr>
+
+    <%= form_with(model:[@user,@request]) do |form| %>
+      <tr>
+        <td><%= form.text_field :requesting %></td>
+        <td><%= form.text_field :who %></td>
+        <td><%= form.text_field :whom %></td>
+        <td><%= form.date_select :deadline %></td>
+        <td><%= form.submit %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

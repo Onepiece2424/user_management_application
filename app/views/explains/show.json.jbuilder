@@ -1,1 +1,1 @@
-json.partial! "explains/explain", explain: @explain
+json.partial! "explains/explain", :explain => @explain

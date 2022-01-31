@@ -2,5 +2,5 @@
 
 <%= render 'form', explain: @explain %>
 
-<%= link_to 'Show', @explain %> |
-<%= link_to 'Back', explains_path %>
+<%= link_to 'Show', user_explain_path(@user, @explain) %>
+<%= link_to 'Back', user_explains_path %>

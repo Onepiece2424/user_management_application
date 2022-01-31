@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :image1 %>
-    <%= form.text_field :image1 %>
+    <%= form.text_area :image1 %>
   </div>
 
   <div class="field">
@@ -46,6 +46,22 @@
     <%= form.text_field :image3 %>
   </div>
 
+  <div class="field">
+    <%= form.label :img %><br />
+    <%= form.file_field :img, class: "image", multiple: true, accept: "image/*" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :img %>
+    <%= form.file_field :img, class: "image", multiple: true, accept: "image/*" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :img %>
+    <%= form.file_field :img, class: "image", multiple: true, accept: "image/*" %>
+  </div>
+
+<br>
   <div class="actions">
     <%= form.submit %>
   </div>
