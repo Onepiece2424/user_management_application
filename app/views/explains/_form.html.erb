@@ -22,8 +22,9 @@
   </div>
 
   <div class="field">
-    <%= form.label :image1 %>
-    <%= form.text_area :image1 %>
+    <%= form.label :img1 %><br />
+    <%= form.file_field :img, class: "image", multiple: true, accept: "image/*" %>
+    <%= form.hidden_field :img_cache %>
   </div>
 
   <div class="field">
@@ -32,8 +33,9 @@
   </div>
 
   <div class="field">
-    <%= form.label :image2 %>
-    <%= form.text_field :image2 %>
+    <%= form.label :img2 %>
+    <%= form.file_field :img, class: "image", multiple: true, accept: "image/*" %>
+    <%= form.hidden_field :img_cache %>
   </div>
 
   <div class="field">
@@ -42,26 +44,11 @@
   </div>
 
   <div class="field">
-    <%= form.label :image3 %>
-    <%= form.text_field :image3 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :img %><br />
+    <%= form.label :img3 %>
     <%= form.file_field :img, class: "image", multiple: true, accept: "image/*" %>
+    <%= form.hidden_field :img_cache %>
   </div>
 
-  <div class="field">
-    <%= form.label :img %>
-    <%= form.file_field :img, class: "image", multiple: true, accept: "image/*" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :img %>
-    <%= form.file_field :img, class: "image", multiple: true, accept: "image/*" %>
-  </div>
-
-<br>
   <div class="actions">
     <%= form.submit %>
   </div>
