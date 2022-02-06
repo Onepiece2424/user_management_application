@@ -38,10 +38,10 @@ class ExplainsController < ApplicationController
 
   def update
     @explain = Explain.new(explain_params)
-    @user = User.find(params[:user_id])
+    @explain.user_id = current_user.id
     respond_to do |format|
       if @explain.update(explain_params)
-        format.html { redirect_to user_explain_path(@user, @explain), :notice => "Explain was successfully updated." }
+        format.html { redirect_to user_explain_path(current_user, @explain), :notice => "Explain was successfully updated." }
         format.json { render :show, :status => :ok, :location => @explain }
       else
         format.html { render :edit, :status => :unprocessable_entity }
@@ -65,6 +65,6 @@ class ExplainsController < ApplicationController
     end
 
     def explain_params
-      params.require(:explain).permit(:title, :precedure1, :image1, :precedure2, :image2, :precedure3, :image3,{ :img => [] })
+      params.require(:explain).permit(:title, :precedure1, :image1, :precedure2, :image2, :precedure3, :image3,{ :img => [] }, :img_cache)
     end
 end

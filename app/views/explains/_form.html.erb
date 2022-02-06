@@ -24,6 +24,7 @@
   <div class="field">
     <%= form.label :img1 %><br />
     <%= form.file_field :img, class: "image", multiple: true, accept: "image/*" %>
+    <%= form.hidden_field :img_cache %>
   </div>
 
   <div class="field">
@@ -34,6 +35,7 @@
   <div class="field">
     <%= form.label :img2 %>
     <%= form.file_field :img, class: "image", multiple: true, accept: "image/*" %>
+    <%= form.hidden_field :img_cache %>
   </div>
 
   <div class="field">
@@ -44,6 +46,7 @@
   <div class="field">
     <%= form.label :img3 %>
     <%= form.file_field :img, class: "image", multiple: true, accept: "image/*" %>
+    <%= form.hidden_field :img_cache %>
   </div>
 
   <div class="actions">
